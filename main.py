@@ -6,7 +6,7 @@ app = FastAPI()
 
 @app.get("/")
 async def root():
-    return {"message": "Hello World"}
+    return {"message": "Welcome to Python Code Generator!"}
 
 #@app.get("/add/{num1}/{num2}")
 #async def add(num1: int, num2: int):
