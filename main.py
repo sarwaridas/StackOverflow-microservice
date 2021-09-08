@@ -6,7 +6,7 @@ app = FastAPI()
 
 @app.get("/")
 async def root():
-    return {"message": "Welcome to Python Code Generator!"}
+    return {"message": "Welcome to Python Code Generator1"}
 
 #@app.get("/add/{num1}/{num2}")
 #async def add(num1: int, num2: int):
@@ -15,10 +15,11 @@ async def root():
   #  total = num1 + num2
    # return {"total": total}
 
-@app.get("/answer/str1")
+@app.get("/answer/{str1}")
 async def answer(str1: str):
     """Scrapes StackOverflow to answer Python Questions"""
-    str2= str1.replace("%20"," ")
+    str2= str1.replace("_"," ")
+    str2= str2+ " in python"
     output= subprocess.run(["howdoi", str2], capture_output=True)
     return {"Output": output}
     
