@@ -24,7 +24,7 @@ async def answer(str1: str):
     """Scrapes StackOverflow to answer Python Questions"""
     str2= str1.replace("_"," ")
     str2= str2+ " in python"
-    output= subprocess.run(["howdoi", str2], capture_output=True)
+    output= subprocess.run(["howdoi", str2], capture_output=True,check=True)
     return {"Code": ((output.stdout).decode()).split("\n")[:-1]}
     
 if __name__ == '__main__':
