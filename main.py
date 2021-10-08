@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 import uvicorn
 import subprocess
-from subprocess import PIPE, run
+from subprocess import PIPE, run # pylint: disable=unused-import
 
 app = FastAPI()
 
